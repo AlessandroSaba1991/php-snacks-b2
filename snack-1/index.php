@@ -34,11 +34,13 @@ $ads = [
     ],
 
 ];
+/* $new_array=array_filter($ads,function($value){
+    return $value["is_active"] === true;
+}); */
 do
-$random_img=array_rand($ads,1);
-while ($random_img['is_active'] === true);
-$image= $random_img['image_path'];
-var_dump($random_img);
+$random_number=rand(0,count($ads) - 1);
+while ($ads[$random_number]['is_active']===false);
+$image = $ads[$random_number]['image_path'];
 ?>
 
 <!DOCTYPE html>
@@ -50,6 +52,6 @@ var_dump($random_img);
     <title>Snack 1</title>
 </head>
 <body>
-    <img src="<?php echo $image; ?>" alt="">
+    <img src="<?= $image; ?>" alt="">
 </body>
 </html>
