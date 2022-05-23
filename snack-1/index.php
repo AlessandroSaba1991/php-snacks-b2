@@ -34,9 +34,6 @@ $ads = [
     ],
 
 ];
-/* $new_array=array_filter($ads,function($value){
-    return $value["is_active"] === true;
-}); */
 do
 $random_number=rand(0,count($ads) - 1);
 while ($ads[$random_number]['is_active']===false);
